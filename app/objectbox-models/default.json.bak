@@ -1,0 +1,59 @@
+{
+  "_note1": "KEEP THIS FILE! Check it into a version control system (VCS) like git.",
+  "_note2": "ObjectBox manages crucial IDs for your object model. See docs for details.",
+  "_note3": "If you have VCS merge conflicts, you must resolve them according to ObjectBox docs.",
+  "entities": [
+    {
+      "id": "1:3074474445920030358",
+      "lastPropertyId": "7:2644832337249347102",
+      "name": "CurrentWeatherEntity",
+      "properties": [
+        {
+          "id": "2:2414260208604383730",
+          "name": "weatherId",
+          "type": 5
+        },
+        {
+          "id": "3:2113152560431977453",
+          "name": "temp",
+          "type": 8
+        },
+        {
+          "id": "4:6320214039199172764",
+          "name": "main",
+          "type": 9
+        },
+        {
+          "id": "5:8211654421626702585",
+          "name": "description",
+          "type": 9
+        },
+        {
+          "id": "6:13855418589023873",
+          "name": "icon",
+          "type": 9
+        },
+        {
+          "id": "7:2644832337249347102",
+          "name": "idd",
+          "type": 6,
+          "flags": 1
+        }
+      ],
+      "relations": []
+    }
+  ],
+  "lastEntityId": "1:3074474445920030358",
+  "lastIndexId": "0:0",
+  "lastRelationId": "0:0",
+  "lastSequenceId": "0:0",
+  "modelVersion": 5,
+  "modelVersionParserMinimum": 5,
+  "retiredEntityUids": [],
+  "retiredIndexUids": [],
+  "retiredPropertyUids": [
+    5760527314227491508
+  ],
+  "retiredRelationUids": [],
+  "version": 1
+}

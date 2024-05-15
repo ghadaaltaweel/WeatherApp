@@ -1,0 +1,60 @@
+[versions]
+dagger_hilt ="2.48.1"
+retrofit="2.9.0"
+okhttp="4.9.3"
+object-box = "3.6.0"
+okhttp-interceptor = "4.12.0"
+core_ktx="1.8.0"
+lifecycle="2.6.0"
+activity_compose="1.7.2"
+espresso="3.5.1"
+junit="4.13.2"
+androidx_test="1.1.5"
+gradleplugin="8.1.1"
+kotlin="1.8.10"
+compose_bom="2023.03.00"
+timber = "5.0.1"
+viewmodel-compose = "2.6.1"
+hilt-navigation-compose = "1.1.0-alpha01"
+
+
+
+[libraries]
+core-ktx={group="androidx.core",name="core-ktx",version.ref="core_ktx"}
+lifecycle={group="androidx.lifecycle",name="lifecycle-runtime-ktx",version.ref="lifecycle"}
+activity-compose={group="androidx.activity",name="activity-compose",version.ref="activity_compose"}
+espresso={group="androidx.test.espresso",name="espresso-core",version.ref="espresso"}
+junit={group="junit",name="junit",version.ref="junit"}
+androidx_compose={group="androidx.compose.ui",name="ui"}
+androidx-compose_graphics={group="androidx.compose.ui",name="ui-graphics"}
+tooling-preview={group="androidx.compose.ui",name="ui-tooling-preview"}
+material3={group="androidx.compose.material3",name="material3"}
+androidx-test={group="androidx.test.ext",name="junit",version.ref="androidx_test"}
+compose-bom={group="androidx.compose",name="compose-bom",version.ref="compose_bom"}
+ui-test-junit4={group="androidx.compose.ui",name="ui-test-junit4"}
+ui-tooling={group="androidx.compose.ui",name="ui-tooling"}
+test-manifest={group="androidx.compose.ui",name="ui-test-manifest"}
+timber = { group = "com.jakewharton.timber", name = "timber", version.ref = "timber" }
+viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "viewmodel-compose" }
+
+
+
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt-navigation-compose" }
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "dagger_hilt" }
+hilt-compiler-android = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "dagger_hilt" }
+hilt-classpath = { group = "com.google.dagger", name = "hilt-android-gradle-plugin", version.ref = "dagger_hilt" }
+
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit-convertor = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okHttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+objectbox = { group = "io.objectbox", name = "objectbox-android", version.ref = "object-box" }
+objectbox-kotlin = { group = "io.objectbox", name = "objectbox-kotlin", version.ref = "object-box" }
+objectbox-browser = { group = "io.objectbox", name = "objectbox-android-objectbrowser", version.ref = "object-box" }
+objectbox-classpath = { group = "io.objectbox", name = "objectbox-gradle-plugin", version.ref = "object-box" }
+objectbox-processor ={group="io.objectbox",name="objectbox-java-processor",version.ref="object-box"}
+okhttp-interceptor ={group="com.squareup.okhttp3",name="logging-interceptor",version.ref="okhttp-interceptor"}
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version = "21.2.0" }
+[plugins]
+
+[bundles]
+

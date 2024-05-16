@@ -56,7 +56,7 @@ class ForecastDaoImp @Inject constructor(
         val search = query.find()
         query?.close()
         Timber.d("success get cashed  forecast city")
-        ResultData.Success(ForecastCityEntity(cityId = 0, cityCountry = "", cityName = "", id = 1))
+        ResultData.Success(search[0])
 
 
     } ?: run()

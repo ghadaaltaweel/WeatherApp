@@ -59,12 +59,12 @@ class MainActivity : ComponentActivity() {
             }
 
             fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-            obtieneLocalizacion()
+            obtainLocalization()
         }
     }
 
     @SuppressLint("MissingPermission")
-    private fun obtieneLocalizacion() {
+    private fun obtainLocalization() {
         if (ContextCompat.checkSelfPermission(
                 this,
                 Manifest.permission.ACCESS_FINE_LOCATION

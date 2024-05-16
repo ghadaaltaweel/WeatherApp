@@ -5,7 +5,7 @@
   "entities": [
     {
       "id": "1:3074474445920030358",
-      "lastPropertyId": "7:2644832337249347102",
+      "lastPropertyId": "8:8593277351903244518",
       "name": "CurrentWeatherEntity",
       "properties": [
         {
@@ -34,16 +34,84 @@
           "type": 9
         },
         {
-          "id": "7:2644832337249347102",
-          "name": "idd",
+          "id": "8:8593277351903244518",
+          "name": "id",
           "type": 6,
           "flags": 1
         }
       ],
       "relations": []
+    },
+    {
+      "id": "2:4481306930174742308",
+      "lastPropertyId": "6:9056591264899857994",
+      "name": "ForecastEntity",
+      "properties": [
+        {
+          "id": "1:1659241175298772513",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:4561500028647477588",
+          "name": "date",
+          "type": 6
+        },
+        {
+          "id": "3:5602240144220880816",
+          "name": "minTemp",
+          "type": 8
+        },
+        {
+          "id": "4:8775032674491137483",
+          "name": "maxTemp",
+          "type": 8
+        },
+        {
+          "id": "5:973272985853936684",
+          "name": "iconId",
+          "type": 5
+        },
+        {
+          "id": "6:9056591264899857994",
+          "name": "icon",
+          "type": 9
+        }
+      ],
+      "relations": []
+    },
+    {
+      "id": "3:8312632208118840912",
+      "lastPropertyId": "4:4944111628997796492",
+      "name": "ForecastCityEntity",
+      "properties": [
+        {
+          "id": "1:4475604337503881230",
+          "name": "id",
+          "type": 6,
+          "flags": 1
+        },
+        {
+          "id": "2:5451512576439635405",
+          "name": "cityId",
+          "type": 5
+        },
+        {
+          "id": "3:4987495350150878604",
+          "name": "cityName",
+          "type": 9
+        },
+        {
+          "id": "4:4944111628997796492",
+          "name": "cityCountry",
+          "type": 9
+        }
+      ],
+      "relations": []
     }
   ],
-  "lastEntityId": "1:3074474445920030358",
+  "lastEntityId": "3:8312632208118840912",
   "lastIndexId": "0:0",
   "lastRelationId": "0:0",
   "lastSequenceId": "0:0",
@@ -52,7 +120,8 @@
   "retiredEntityUids": [],
   "retiredIndexUids": [],
   "retiredPropertyUids": [
-    5760527314227491508
+    5760527314227491508,
+    2644832337249347102
   ],
   "retiredRelationUids": [],
   "version": 1

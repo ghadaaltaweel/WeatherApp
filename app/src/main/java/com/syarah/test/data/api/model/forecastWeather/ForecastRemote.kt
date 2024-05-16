@@ -10,6 +10,6 @@ data class ForecastRemote(
     val mainInfo:ForecastMainTempInfoRemote?,
 
     @SerializedName("weather")
-    val weather:ForecastWeatherRemote?
+    val weather:List<ForecastWeatherRemote>?
 
 )

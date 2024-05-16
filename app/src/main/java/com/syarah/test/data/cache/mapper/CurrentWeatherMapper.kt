@@ -15,7 +15,21 @@ class CurrentWeatherMapper @Inject constructor(
                 temp = input?.temp ?: 0.0,
                 main = input?.main ?: "",
                 description = input?.description ?: "",
-                icon = input?.icon ?: ""
+                icon = input?.icon ?: "",
+                countryName = input?.countryName ?: "N/A"
+            )
+        }
+    }
+
+    override suspend fun mapFrom(singleInput: CurrentWeatherEntity): CurrentWeather {
+        return singleInput.run {
+            CurrentWeather(
+                temp = singleInput.temp,
+                weatherId = singleInput.weatherId,
+                main = singleInput.main,
+                description = singleInput.description,
+                icon = singleInput.icon,
+                countryName = singleInput.countryName
             )
         }
     }

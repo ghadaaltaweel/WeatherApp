@@ -54,6 +54,7 @@ android {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
+
 }
 
 
@@ -69,6 +70,8 @@ dependencies {
     implementation(libs.tooling.preview)
     implementation(libs.material3)
     implementation(libs.play.services.location)
+    implementation(libs.play.services.maps)
+    implementation(libs.compose.material)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.test)
     androidTestImplementation(libs.espresso)
@@ -101,6 +104,8 @@ dependencies {
     implementation (libs.timber)
     implementation(libs.viewmodel.compose)
     implementation(libs.hilt.navigation.compose)
+    implementation ("com.google.android.gms:play-services-location:18.0.0")
+    implementation ("com.google.android.gms:play-services-maps:18.0.0")
 
 
 

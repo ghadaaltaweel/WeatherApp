@@ -16,6 +16,7 @@ compose_bom="2023.03.00"
 timber = "5.0.1"
 viewmodel-compose = "2.6.1"
 hilt-navigation-compose = "1.1.0-alpha01"
+androidx-compose-material3 = "1.1.1"
 
 
 
@@ -54,6 +55,10 @@ objectbox-classpath = { group = "io.objectbox", name = "objectbox-gradle-plugin"
 objectbox-processor ={group="io.objectbox",name="objectbox-java-processor",version.ref="object-box"}
 okhttp-interceptor ={group="com.squareup.okhttp3",name="logging-interceptor",version.ref="okhttp-interceptor"}
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version = "21.2.0" }
+play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version = "18.2.0" }
+androidx-material3-android = { group = "androidx.compose.material3", name = "material3-android", version = "1.1.1" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "androidx-compose-material3" }
+compose-material = { group = "androidx.compose.material", name = "material", version.ref = "androidx-compose-material3" }
 [plugins]
 
 [bundles]

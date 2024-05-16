@@ -4,8 +4,11 @@ import com.google.gson.annotations.SerializedName
 
 data class CurrentWeatherRemote(
     @SerializedName("weather")
-    val weather:WeatherRemote,
+    val weather:List<WeatherRemote>?,
 
     @SerializedName("main")
-    val main:MainDataWeatherRemote
+    val main:MainDataWeatherRemote?,
+
+    @SerializedName("name")
+    val name:String?
 )

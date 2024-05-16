@@ -12,5 +12,6 @@ data class CurrentWeatherEntity(
     val description: String,
     val icon: String,
     val weatherId: Int,
+    val countryName:String
 
     )

@@ -5,6 +5,6 @@ import com.syarah.test.core.model.currentWeather.CurrentWeather
 
 interface CurrentWeatherRepo {
     suspend fun getCurrentWeatherRemotely(lat:Double, long:Double):ResultData<CurrentWeather>
-    suspend fun getCurrentWeatherLocally(lat:Double, long:Double):ResultData<CurrentWeather>
+    suspend fun getCurrentWeatherLocally():ResultData<CurrentWeather>
     suspend fun insertCurrentWeatherToCache(model:CurrentWeather):ResultData<Unit>
 }

@@ -10,5 +10,7 @@ data class CurrentWeather(
 
     val description: String,
 
-    val icon: String
+    val icon: String,
+
+    val countryName: String
 )

@@ -1,14 +1,17 @@
 package com.syarah.test.di
 
-import com.syarah.test.core.repo.currentWeather.CurrentWeatherRepo
-import com.syarah.test.core.usecase.GetCurrentWeatherUseCase
-import com.syarah.test.core.usecase.GetCurrentWeatherUseCaseImp
-import com.syarah.test.data.CurrentWeatherDaoImp
-import com.syarah.test.data.cache.dao.CurrentWeatherDao
+import com.syarah.test.core.dao.CurrentWeatherDaoImp
+import com.syarah.test.core.dao.CurrentWeatherDao
+import com.syarah.test.core.dao.ForecastDao
+import com.syarah.test.core.dao.ForecastDaoImp
+import com.syarah.test.data.cache.entity.CurrentWeatherEntity
+import com.syarah.test.data.cache.entity.ForecastCityEntity
+import com.syarah.test.data.cache.entity.ForecastEntity
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
+import io.objectbox.Box
 import javax.inject.Singleton
 
 @Module
@@ -17,7 +20,23 @@ class DaoModule {
 
     @Singleton
     @Provides
-    fun provideCurrentWeatherDao(): CurrentWeatherDao =
-        CurrentWeatherDaoImp()
+    fun provideCurrentWeatherDao(
+        currentWeatherBox: Box<CurrentWeatherEntity>?
+    ): CurrentWeatherDao =
+        CurrentWeatherDaoImp(
+            currentWeatherBox
+        )
 
+    @Singleton
+    @Provides
+    fun provideForecastDao(
+        forecastBox: Box<ForecastEntity>?,
+        forecastCityBox: Box<ForecastCityEntity>?
+
+    ): ForecastDao =
+        ForecastDaoImp(
+            forecastBox = forecastBox,
+            forecastCityBox = forecastCityBox
+
+        )
 }

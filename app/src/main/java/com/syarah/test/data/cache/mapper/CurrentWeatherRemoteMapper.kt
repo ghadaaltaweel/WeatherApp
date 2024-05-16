@@ -8,16 +8,18 @@ import javax.inject.Inject
 
 class CurrentWeatherRemoteMapper @Inject constructor(
 
-): Mapper<CurrentWeatherRemote, CurrentWeather> {
+) : Mapper<CurrentWeatherRemote, CurrentWeather> {
     override suspend fun mapTo(input: CurrentWeatherRemote?): CurrentWeather {
         return input.run {
             CurrentWeather(
-                temp = input?.main?.temp?:0.0,
-                weatherId = input?.weather?.first()?.id?:-1,
-                main= input?.weather?.first()?.main?:"",
-                icon = input?.weather?.first()?.icon?:"",
-                description = input?.weather?.first()?.description?:"",
-                countryName = input?.name?:"N/A"
+                temp = input?.main?.temp?.let { it - 273.15 } ?: run {
+                    0.0
+                },
+                weatherId = input?.weather?.first()?.id ?: -1,
+                main = input?.weather?.first()?.main ?: "",
+                icon = input?.weather?.first()?.icon ?: "",
+                description = input?.weather?.first()?.description ?: "",
+                countryName = input?.name ?: "N/A"
             )
         }
     }

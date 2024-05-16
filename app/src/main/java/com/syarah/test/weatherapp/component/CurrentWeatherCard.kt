@@ -24,13 +24,14 @@ import com.syarah.test.core.model.currentWeather.CurrentWeather
 import com.syarah.test.weatherapp.celsiusToFahrenheit
 import com.syarah.test.weatherapp.fahrenheitToCelsius
 import com.syarah.test.weatherapp.round
+import kotlin.math.round
 
 
 @Composable
 fun CurrentWeatherCard(currentWeather: CurrentWeather) {
 
     var tempVal by remember {
-        mutableStateOf(currentWeather.temp)
+        mutableStateOf(round(currentWeather.temp) )
     }
     var isfehrenhite by remember {
         mutableStateOf(true)
@@ -58,7 +59,7 @@ fun CurrentWeatherCard(currentWeather: CurrentWeather) {
                 verticalAlignment = Alignment.CenterVertically) {
 
                 Text(
-                    text = if (isfehrenhite) "${tempVal}f" else "${tempVal}c",
+                    text = if (isfehrenhite) "${round(tempVal) }f" else "${round(tempVal) }c",
                     style = MaterialTheme.typography.displaySmall,
                     color = MaterialTheme.colorScheme.onSurface
                 )
@@ -67,11 +68,14 @@ fun CurrentWeatherCard(currentWeather: CurrentWeather) {
                         tempVal = if (it)
                         {
                             isfehrenhite=false
-                           fahrenheitToCelsius(currentWeather.temp).round(2)}
+                            tempVal =  fahrenheitToCelsius(tempVal).round(2)
+                           fahrenheitToCelsius(tempVal).round(2)
+                        }
                         else
                         {
                             isfehrenhite=true
-                            celsiusToFahrenheit(currentWeather.temp).round(2)
+                            tempVal =   celsiusToFahrenheit(tempVal).round(2)
+                            celsiusToFahrenheit(tempVal).round(2)
 
                         }
 

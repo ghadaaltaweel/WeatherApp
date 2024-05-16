@@ -19,11 +19,8 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
 import com.syarah.test.core.model.currentWeather.forecastWeather.Forecast
 import com.syarah.test.weatherapp.R
-import com.syarah.test.weatherapp.convertLongToTime
 import com.syarah.test.weatherapp.getDayNameFromLongDate
-import java.text.SimpleDateFormat
-import java.util.Date
-
+import com.syarah.test.weatherapp.getTimeNameFromLongDate
 
 @Composable
 fun DayListItem(forecast: Forecast) {
@@ -44,6 +41,12 @@ fun DayListItem(forecast: Forecast) {
         ) {
             Text(
                 text = forecast.date.getDayNameFromLongDate(),
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.padding(bottom = 8.dp, top = 8.dp)
+            )
+            Text(
+                text = forecast.date.getTimeNameFromLongDate(),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.padding(bottom = 8.dp, top = 8.dp)
@@ -78,9 +81,4 @@ fun DayListItem(forecast: Forecast) {
         }
     }
 }
-
-
-
-
-
 

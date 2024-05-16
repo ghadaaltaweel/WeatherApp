@@ -109,13 +109,7 @@ class MainActivity : ComponentActivity() {
             if (addressList != null && addressList.isNotEmpty()) {
                 latitude = addressList[0].latitude
                 longitude = addressList[0].longitude
-                // Now you have latitude and longitude
-                // Do something with them
-                Toast.makeText(
-                    context,
-                    "Latitude: $latitude, Longitude: $longitude",
-                    Toast.LENGTH_SHORT
-                ).show()
+
                 Log.d(
                     "Location",
                     "Location for $city => Latitude: $latitude, Longitude: $longitude"

@@ -20,6 +20,7 @@ import androidx.compose.ui.unit.dp
 import com.syarah.test.core.model.currentWeather.forecastWeather.Forecast
 import com.syarah.test.weatherapp.R
 import com.syarah.test.weatherapp.convertLongToTime
+import com.syarah.test.weatherapp.getDayNameFromLongDate
 import java.text.SimpleDateFormat
 import java.util.Date
 
@@ -27,9 +28,6 @@ import java.util.Date
 @Composable
 fun DayListItem(forecast: Forecast) {
 
-    var sdf: SimpleDateFormat = SimpleDateFormat("EEEE")
-    var d: Date = convertLongToTime(forecast.date)
-    var dayOfTheWeek: String = sdf.format(d)
 
     Surface(
         modifier = Modifier
@@ -45,7 +43,7 @@ fun DayListItem(forecast: Forecast) {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             Text(
-                text = dayOfTheWeek,
+                text = forecast.date.getDayNameFromLongDate(),
                 style = MaterialTheme.typography.bodyMedium,
                 color = MaterialTheme.colorScheme.onSurface,
                 modifier = Modifier.padding(bottom = 8.dp, top = 8.dp)

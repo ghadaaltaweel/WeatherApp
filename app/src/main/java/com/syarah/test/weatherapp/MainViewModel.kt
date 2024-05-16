@@ -76,8 +76,6 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             handleResult(getCurrentWeatherUseCase(lat, long),
                 { data ->
-                    Log.d("ghada", "getCurrentWeather: $data")
-
                     viewModelScope.launch {
                         _uiState.emit(
                             _uiState.value.copy(
@@ -90,7 +88,6 @@ class MainViewModel @Inject constructor(
                 },
                 {error ->
                     viewModelScope.launch {
-                        Log.d("ghada", "getCurrentWeather: $error")
                         _uiState.emit(
                             _uiState.value.copy(
                                 isLoading = false,

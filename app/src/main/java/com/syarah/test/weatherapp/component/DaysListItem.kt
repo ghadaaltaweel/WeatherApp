@@ -1,5 +1,6 @@
 package com.syarah.test.weatherapp.component
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,21 +11,24 @@ import androidx.compose.foundation.layout.paddingFromBaseline
 import androidx.compose.foundation.layout.width
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
+import coil.compose.AsyncImage
 import com.syarah.test.core.model.currentWeather.forecastWeather.Forecast
 import com.syarah.test.weatherapp.R
 import com.syarah.test.weatherapp.getDayNameFromLongDate
 import com.syarah.test.weatherapp.getTimeNameFromLongDate
 
+
+
 @Composable
 fun DayListItem(forecast: Forecast) {
-
+    val iconBaseUrl = "http://openweathermap.org/img/wn/"
+    val iconUrl = "$iconBaseUrl${forecast.icon}.png"
 
     Surface(
         modifier = Modifier
@@ -64,12 +68,19 @@ fun DayListItem(forecast: Forecast) {
                         color = MaterialTheme.colorScheme.onSurface,
                         modifier = Modifier.paddingFromBaseline(24.dp)
                     )
-                    Icon(
+
+
+                    AsyncImage(
+                        model = iconUrl,
+                        placeholder = painterResource(id = R.drawable.ic_sun),
+                        error = painterResource(id = R.drawable.ic_sun),
+                        contentDescription = "The delasign logo",
+                    )                   /* Icon(
                         painter = if (forecast.minTemp < 100) painterResource(id = R.drawable.ic_cloud) else painterResource(
                             id = R.drawable.ic_sun
                         ),
                         contentDescription = null
-                    )
+                    )*/
                     Text(
                         text = forecast.minTemp.toString(),
                         style = MaterialTheme.typography.bodyMedium,
@@ -81,4 +92,5 @@ fun DayListItem(forecast: Forecast) {
         }
     }
 }
+
 
